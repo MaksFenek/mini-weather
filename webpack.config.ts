@@ -1,6 +1,8 @@
 const path = require('path'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   output: {
@@ -26,24 +28,36 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader: 'css-loader',
-            options: { sourceMap: true },
-          },
-          {
             loader: 'postcss-loader',
-            options: { sourceMap: true, config: { path: 'postcss.config.js' } },
+            options: { config: { path: 'postcss.config.js' } },
           },
-          {
-            loader: 'sass-loader',
-            options: { sourceMap: true },
-          },
+
+          'sass-loader',
         ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
+        exclude: path.resolve(__dirname, 'src/Icons/favicon.png'),
         use: [
           {
             loader: 'file-loader',
+
+            options: {
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.png$/i,
+        include: path.resolve(__dirname, 'src/Icons/favicon.png'),
+        use: [
+          {
+            loader: 'file-loader',
+
+            options: {
+              name: 'favicon.[ext]',
+            },
           },
         ],
       },
@@ -53,6 +67,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),

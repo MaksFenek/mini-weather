@@ -1,7 +1,8 @@
 import React from 'react';
+import Main from './Main/Main';
 
 const App = () => {
-  return <h1>hi</h1>;
+  return <Main />;
 };
 
 export default App;

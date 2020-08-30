@@ -2,8 +2,6 @@
 /node_modules
 # production
 /dist
-#firebase
-/Firebase
 # env
 .env
 .env.local
