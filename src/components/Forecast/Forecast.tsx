@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { IDate } from '../Main/Main';
 import Temperature from './Cards/Temperature/Temperature';
 import './Forecast.scss';
 
-const Forecast = () => {
+interface IForecast {
+  city: string;
+  children: ReactNode;
+  date: IDate | '--';
+}
+
+const Forecast: React.FC<IForecast> = ({ city, children, date }) => {
   return (
     <div className='forecast' aria-label='forecast'>
       <div className='forecast-header'>
-        <span>Toronto</span>
-        <span>30 august</span>
+        <span>{city}</span>
+        {date !== '--' && <span>{`${date.day} ${date.month}`}</span>}
       </div>
-      <div className='forecast-content'>
-        <div className='forecast-content__today'>
-          <Temperature />
-        </div>
-        <div className='forecast-content__params'></div>
-      </div>
+      <div className='forecast-content'>{children}</div>
     </div>
   );
 };

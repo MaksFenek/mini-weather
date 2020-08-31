@@ -1,19 +1,23 @@
-const path = require('path'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
-  entry: './src/index.tsx',
+  entry: ['@babel/polyfill', 'whatwg-fetch', './src/index.tsx'],
   output: {
     path: path.join(__dirname, '/dist'),
     filename: '[name].[hash].js',
+  },
+  devServer: {
+    disableHostCheck: true,
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+        },
         exclude: /node_modules/,
       },
       {
@@ -21,12 +25,16 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: { config: { path: 'postcss.config.js' } },

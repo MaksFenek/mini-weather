@@ -2,7 +2,12 @@ import React from 'react';
 import './Navbar.scss';
 import Input from '@material-ui/core/Input';
 
-const Navbar = () => {
+interface INavbar {
+  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  searchRef: any;
+}
+
+const Navbar: React.FC<INavbar> = ({ onKeyPress, searchRef }) => {
   return (
     <nav className='nav' aria-label='nav'>
       <div className='nav-logo'>
@@ -11,8 +16,10 @@ const Navbar = () => {
       </div>
       <div className='nav-search'>
         <Input
+          inputRef={searchRef}
+          onKeyPress={onKeyPress}
           placeholder='Search...'
-          inputProps={{ 'aria-label': 'search' }}
+          inputProps={{ 'aria-label': 'search', id: 'autocomplete' }}
           type='text'
         />
       </div>

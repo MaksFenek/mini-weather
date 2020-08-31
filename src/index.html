@@ -13,5 +13,24 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh-IbBzVbvlgw_KVbYI5BDxLdGImg-vPQ&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
+    <script>
+      let autocomplete;
+      window.onload = function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),
+          {
+            types: ['geocode'],
+            fields: ['name'],
+          }
+        );
+      };
+    </script>
   </body>
 </html>
