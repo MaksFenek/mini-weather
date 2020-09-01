@@ -57,7 +57,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.png$/i,
+        test: /\.png$/,
         include: path.resolve(__dirname, 'src/Icons/favicon.png'),
         use: [
           {
@@ -78,6 +78,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+    }),
+    new CopyPlugin({
+      patterns: [{ from: './src/Icons', to: 'icons', force: true }],
     }),
   ],
 };

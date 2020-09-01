@@ -17,13 +17,13 @@ const Params = ({ humidity = '--', pressure = '--', wind }: IParams) => {
         <ul>
           <li>
             <svg className='icon' height='36px' width='36px'>
-              <use xlinkHref={`/src/Icons/params.svg#humidity`} />
+              <use xlinkHref={`icons/params.svg#humidity`} />
             </svg>
             <span>Humidity: {humidity} %</span>
           </li>
           <li>
             <svg className='icon' height='36px' width='36px'>
-              <use xlinkHref={`/src/Icons/params.svg#barometer`} />
+              <use xlinkHref={`icons/params.svg#barometer`} />
             </svg>
             <span>Pressure: {pressure} hPa</span>
           </li>
@@ -35,7 +35,7 @@ const Params = ({ humidity = '--', pressure = '--', wind }: IParams) => {
               style={{ margin: '-8px' }}
             >
               <use
-                xlinkHref={`/src/Icons/compass.svg#main
+                xlinkHref={`icons/compass.svg#main
               `}
               ></use>
               <use
@@ -43,7 +43,7 @@ const Params = ({ humidity = '--', pressure = '--', wind }: IParams) => {
                   transform: `rotate(${wind.deg + 90}deg)`,
                   transformOrigin: 'center',
                 }}
-                xlinkHref={`/src/Icons/compass.svg#arrow`}
+                xlinkHref={`icons/compass.svg#arrow`}
               ></use>
             </svg>
             <span>Wind: {wind ? wind.speed : '--'} mph</span>

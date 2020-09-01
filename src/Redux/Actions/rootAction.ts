@@ -10,7 +10,7 @@ export const getWeather = (payload: IWeatherState) => ({
 export const GetWeatherThunk = (city: string) => (dispatch: any) => {
   if (city) {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=74bcb8750f0c21ae8bdb22dc41f21ec1
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=74bcb8750f0c21ae8bdb22dc41f21ec1
       `
     )
       .then((res) => res.json())

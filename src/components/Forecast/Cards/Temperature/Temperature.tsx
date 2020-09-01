@@ -12,9 +12,7 @@ const Temperature: React.FC<ITemperature> = ({ temp, description }) => {
       <div className='temperature'>
         <div className='temperature-value'>
           <svg className='icon' height='96px' width='96px'>
-            <use
-              xlinkHref={`/src/Icons/icons.svg#${description.toLowerCase()}`}
-            />
+            <use xlinkHref={`icons/icons.svg#${description.toLowerCase()}`} />
           </svg>
           <h2>{temp} °C</h2>
         </div>
