@@ -6,8 +6,11 @@
       align-items: center;
       font-size: 20px;
       margin-bottom: 24px;
-      span {
+      p {
         margin-left: 12px;
+        span {
+          font-weight: bold;
+        }
       }
     }
   }

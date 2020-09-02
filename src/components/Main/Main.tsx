@@ -1,20 +1,33 @@
+// React
 import React from 'react';
+
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
-import { useStorage } from '../../API/localStorageAPI';
 import { GetWeatherThunk } from '../../Redux/Actions/rootAction';
 import { IWeatherState } from '../../Redux/Reducers/rootReducer';
-import Params from '../Forecast/Cards/Params/Params';
-import Temperature from '../Forecast/Cards/Temperature/Temperature';
-import Forecast from '../Forecast/Forecast';
-import Navbar from '../Navbar/Navbar';
-import './Main.scss';
 
+// API
+import { useStorage } from '../../API/localStorageAPI';
+import GoogleMapReact from 'google-map-react';
+// Components
+import Params from '../Forecast/ForecastToday/Cards/Params/Params';
+import Temperature from '../Forecast/ForecastToday/Cards/Temperature/Temperature';
+import ForecastToday from '../Forecast/ForecastToday/ForecastToday';
+import Navbar from '../Navbar/Navbar';
+
+// Styles
+import './Main.scss';
+import ForecastWeek from '../Forecast/ForecastWeek/ForecastWeek';
+import { IDay } from '../../Types';
+
+// Types
 export interface IDate {
+  name: string;
   day: number;
   month: string;
 }
 
-function Main() {
+const Main: React.FC = () => {
   // Create useSelector
   const state = useSelector((state: IWeatherState) => state);
 
@@ -24,7 +37,11 @@ function Main() {
   // State for city name
   const [city, setCity] = React.useState<string>('Toronto');
 
+  // State for date
   const [date, setDate] = React.useState<IDate | '--'>('--');
+
+  // State for week
+  const [week, setWeek] = React.useState<IDay[]>();
 
   // Refs
   const searchRef = React.useRef<HTMLInputElement>(null);
@@ -53,15 +70,32 @@ function Main() {
       'November',
       'December',
     ];
+    const dayName = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ];
     const month = monthNames[new Date().getMonth()];
+    const name = dayName[new Date().getDay() - 1];
 
-    setDate({ day, month });
+    setDate({ day, month, name });
   }, []);
+
   React.useEffect(() => {
-    if (state.city) {
-      setCity(state.city);
+    if (state.daily) {
+      setWeek(state.daily);
     }
-  }, [state.city]);
+  });
+  React.useEffect(() => {
+    if (state.today.city) {
+      // Set the city
+      setCity(state.today.city);
+    }
+  }, [state.today.city]);
 
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter' && searchRef && e.currentTarget.value !== '') {
@@ -76,16 +110,30 @@ function Main() {
   return (
     <section className='main'>
       <Navbar onKeyPress={onKeyPress} searchRef={searchRef} />
-      <Forecast city={city} date={date}>
-        <Temperature temp={state.temp} description={state.main} />
+      <ForecastToday city={city} date={date}>
+        <Temperature temp={state.today.temp} description={state.today.main} />
         <Params
-          humidity={state.humidity}
-          pressure={state.pressure}
-          wind={state.wind}
+          humidity={state.today.humidity}
+          pressure={state.today.pressure}
+          wind={state.today.wind}
         />
-      </Forecast>
+      </ForecastToday>
+      <div className='map'>
+        <iframe
+          src={`https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+          frameBorder='0'
+          style={{
+            border: 0,
+            width: '100%',
+            height: '100%',
+            borderRadius: '20px',
+          }}
+          allowFullScreen
+        ></iframe>
+      </div>
+      <ForecastWeek week={week} />
     </section>
   );
-}
+};
 
 export default Main;

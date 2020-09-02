@@ -1,0 +1,44 @@
+.card {
+  background: #bbdefb;
+  border-radius: 20px;
+  min-width: 150px;
+  width: 100%;
+  margin: 0 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-day {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+
+  &-icon {
+    margin-bottom: 12px;
+  }
+
+  &-weather {
+    span {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  &-params {
+    padding: 0;
+    margin: 0;
+    margin-top: 12px;
+    li {
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      span {
+        font-weight: bold;
+        margin-left: 14px;
+      }
+    }
+  }
+}
