@@ -5,7 +5,11 @@
       "@babel/preset-env",
       {
         "debug": true,
-        "useBuiltIns": "entry"
+        "useBuiltIns": "entry",
+        "targets": {
+          "esmodules": true,
+          "modules": "commonjs"
+        }
       }
     ],
     "@babel/preset-typescript"

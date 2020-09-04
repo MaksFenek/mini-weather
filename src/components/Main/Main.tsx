@@ -8,7 +8,6 @@ import { IWeatherState } from '../../Redux/Reducers/rootReducer';
 
 // API
 import { useStorage } from '../../API/localStorageAPI';
-import GoogleMapReact from 'google-map-react';
 // Components
 import Params from '../Forecast/ForecastToday/Cards/Params/Params';
 import Temperature from '../Forecast/ForecastToday/Cards/Temperature/Temperature';

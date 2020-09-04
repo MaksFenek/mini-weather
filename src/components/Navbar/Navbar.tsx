@@ -20,7 +20,8 @@ const Navbar: React.FC<INavbar> = ({ onKeyPress, searchRef }) => {
           onKeyPress={onKeyPress}
           style={{ width: 'auto' }}
           placeholder='Search...'
-          inputProps={{ 'aria-label': 'search', id: 'autocomplete' }}
+          aria-label='search'
+          inputProps={{ id: 'autocomplete' }}
           type='text'
         />
       </div>

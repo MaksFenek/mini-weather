@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ForecastWeek /> contains all own children 1`] = `
+<div
+  aria-label="week"
+  className="week"
+>
+  <div
+    className="card"
+  >
+    <div
+      aria-label="name"
+      className="card-day"
+    >
+      Monday
+    </div>
+    <svg
+      className="card-icon"
+      height="84px"
+      width="84px"
+    >
+      <use
+        aria-label="icon"
+        xlinkHref="icons/icons.svg#clouds"
+      />
+    </svg>
+    <div
+      className="card-weather"
+    >
+      <span
+        aria-label="temp-day"
+      >
+        13
+      </span>
+       °C /
+       
+      <span
+        aria-label="temp-night"
+      >
+        13
+      </span>
+       °C
+    </div>
+    <ul
+      className="card-params"
+    >
+      <li>
+        <svg
+          className="icon"
+          height="36px"
+          width="36px"
+        >
+          <use
+            xlinkHref="icons/params.svg#humidity"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="humidity"
+          >
+            13
+          </span>
+           %
+        </p>
+      </li>
+      <li>
+        <svg
+          className="icon"
+          height="36px"
+          width="36px"
+        >
+          <use
+            xlinkHref="icons/params.svg#barometer"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="pressure"
+          >
+            13
+          </span>
+           hPa
+        </p>
+      </li>
+      <li>
+        <svg
+          className="icon"
+          height="52px"
+          style={
+            Object {
+              "margin": "-7px",
+            }
+          }
+          width="52px"
+        >
+          <use
+            xlinkHref="icons/compass.svg#main
+              "
+          />
+          <use
+            style={
+              Object {
+                "transform": "rotate(283deg)",
+                "transformOrigin": "center",
+              }
+            }
+            xlinkHref="icons/compass.svg#arrow"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="wind_speed"
+          >
+            13
+          </span>
+           
+          mph
+        </p>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="card"
+  >
+    <div
+      aria-label="name"
+      className="card-day"
+    >
+      Tuesday
+    </div>
+    <svg
+      className="card-icon"
+      height="84px"
+      width="84px"
+    >
+      <use
+        aria-label="icon"
+        xlinkHref="icons/icons.svg#clear"
+      />
+    </svg>
+    <div
+      className="card-weather"
+    >
+      <span
+        aria-label="temp-day"
+      >
+        13
+      </span>
+       °C /
+       
+      <span
+        aria-label="temp-night"
+      >
+        13
+      </span>
+       °C
+    </div>
+    <ul
+      className="card-params"
+    >
+      <li>
+        <svg
+          className="icon"
+          height="36px"
+          width="36px"
+        >
+          <use
+            xlinkHref="icons/params.svg#humidity"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="humidity"
+          >
+            13
+          </span>
+           %
+        </p>
+      </li>
+      <li>
+        <svg
+          className="icon"
+          height="36px"
+          width="36px"
+        >
+          <use
+            xlinkHref="icons/params.svg#barometer"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="pressure"
+          >
+            13
+          </span>
+           hPa
+        </p>
+      </li>
+      <li>
+        <svg
+          className="icon"
+          height="52px"
+          style={
+            Object {
+              "margin": "-7px",
+            }
+          }
+          width="52px"
+        >
+          <use
+            xlinkHref="icons/compass.svg#main
+              "
+          />
+          <use
+            style={
+              Object {
+                "transform": "rotate(283deg)",
+                "transformOrigin": "center",
+              }
+            }
+            xlinkHref="icons/compass.svg#arrow"
+          />
+        </svg>
+        <p>
+          <span
+            aria-label="wind_speed"
+          >
+            13
+          </span>
+           
+          mph
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

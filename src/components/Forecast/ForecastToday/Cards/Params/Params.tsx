@@ -5,7 +5,7 @@ import React from 'react';
 import './Params.scss';
 
 // Types
-interface IParams {
+export interface IParams {
   humidity: number | '--';
   pressure: number | '--';
   wind: {
@@ -27,7 +27,7 @@ const Params: React.FC<IParams> = ({
             <use xlinkHref={`icons/params.svg#humidity`} />
           </svg>
           <p>
-            Humidity: <span>{humidity}</span> %
+            Humidity: <span aria-label='humidity'>{humidity}</span> %
           </p>
         </li>
         <li>
@@ -35,7 +35,7 @@ const Params: React.FC<IParams> = ({
             <use xlinkHref={`icons/params.svg#barometer`} />
           </svg>
           <p>
-            Pressure: <span>{pressure}</span> hPa
+            Pressure: <span aria-label='pressure'>{pressure}</span> hPa
           </p>
         </li>
         <li>
@@ -58,7 +58,7 @@ const Params: React.FC<IParams> = ({
             ></use>
           </svg>
           <p>
-            Wind: <span>{wind ? wind.speed : '--'}</span> mph
+            Wind: <span aria-label='wind'>{wind ? wind.speed : '--'}</span> mph
           </p>
         </li>
       </ul>

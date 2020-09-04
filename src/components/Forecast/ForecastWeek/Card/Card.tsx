@@ -13,7 +13,9 @@ const Card: React.FC<IDay> = ({
 }) => {
   return (
     <div className='card'>
-      <div className='card-day'>{name}</div>
+      <div className='card-day' aria-label='name'>
+        {name}
+      </div>
       <svg className='card-icon' height='84px' width='84px'>
         <use
           aria-label='icon'
@@ -21,7 +23,8 @@ const Card: React.FC<IDay> = ({
         />
       </svg>
       <div className='card-weather'>
-        <span>{temp.day}</span> °C / <span>{temp.night}</span> °C
+        <span aria-label='temp-day'>{temp.day}</span> °C /{' '}
+        <span aria-label='temp-night'>{temp.night}</span> °C
       </div>
 
       <ul className='card-params'>
@@ -30,7 +33,7 @@ const Card: React.FC<IDay> = ({
             <use xlinkHref={`icons/params.svg#humidity`} />
           </svg>
           <p>
-            <span>{humidity}</span> %
+            <span aria-label='humidity'>{humidity}</span> %
           </p>
         </li>
         <li>
@@ -38,7 +41,7 @@ const Card: React.FC<IDay> = ({
             <use xlinkHref={`icons/params.svg#barometer`} />
           </svg>
           <p>
-            <span>{pressure}</span> hPa
+            <span aria-label='pressure'>{pressure}</span> hPa
           </p>
         </li>
         <li>
@@ -61,7 +64,10 @@ const Card: React.FC<IDay> = ({
             ></use>
           </svg>
           <p>
-            <span>{wind_speed ? wind_speed : '--'}</span> mph
+            <span aria-label='wind_speed'>
+              {wind_speed ? wind_speed : '--'}
+            </span>{' '}
+            mph
           </p>
         </li>
       </ul>

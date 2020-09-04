@@ -16,12 +16,19 @@ const ForecastToday: React.FC<IForecastToday> = ({ city, children, date }) => {
   return (
     <div className='forecast' aria-label='forecast'>
       <div className='forecast-header'>
-        <span className='city'>{city}</span>
+        <span className='city' aria-label='city'>
+          {city}
+        </span>
         {date !== '--' && (
-          <span className='date'>{`${date.day} ${date.month}, ${date.name}`}</span>
+          <span
+            className='date'
+            aria-label='date'
+          >{`${date.day} ${date.month}, ${date.name}`}</span>
         )}
       </div>
-      <div className='forecast-content'>{children}</div>
+      <div className='forecast-content' aria-label='children'>
+        {children}
+      </div>
     </div>
   );
 };

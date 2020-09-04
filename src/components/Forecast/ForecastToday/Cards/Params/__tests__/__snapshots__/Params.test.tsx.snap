@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Params/> should render correctly 1`] = `
+<div
+  className="params"
+>
+  <ul>
+    <li>
+      <svg
+        className="icon"
+        height="36px"
+        width="36px"
+      >
+        <use
+          xlinkHref="icons/params.svg#humidity"
+        />
+      </svg>
+      <p>
+        Humidity: 
+        <span
+          aria-label="humidity"
+        >
+          40
+        </span>
+         %
+      </p>
+    </li>
+    <li>
+      <svg
+        className="icon"
+        height="36px"
+        width="36px"
+      >
+        <use
+          xlinkHref="icons/params.svg#barometer"
+        />
+      </svg>
+      <p>
+        Pressure: 
+        <span
+          aria-label="pressure"
+        >
+          1000
+        </span>
+         hPa
+      </p>
+    </li>
+    <li>
+      <svg
+        className="icon"
+        height="52px"
+        style={
+          Object {
+            "margin": "-7px",
+          }
+        }
+        width="52px"
+      >
+        <use
+          xlinkHref="icons/compass.svg#main
+              "
+        />
+        <use
+          style={
+            Object {
+              "transform": "rotate(390deg)",
+              "transformOrigin": "center",
+            }
+          }
+          xlinkHref="icons/compass.svg#arrow"
+        />
+      </svg>
+      <p>
+        Wind: 
+        <span
+          aria-label="wind"
+        >
+          2.3
+        </span>
+         mph
+      </p>
+    </li>
+  </ul>
+</div>
+`;

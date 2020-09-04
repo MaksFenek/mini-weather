@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> should render correctly 1`] = `
+<nav
+  aria-label="nav"
+  className="nav"
+>
+  <div
+    className="nav-logo"
+  >
+    <img
+      alt="Logo"
+      height="48px"
+      src="favicon.png"
+      width="48px"
+    />
+    <h1>
+      Weather
+    </h1>
+  </div>
+  <div
+    className="nav-search"
+  >
+    <div
+      aria-label="search"
+      className="MuiInputBase-root MuiInput-root MuiInput-underline"
+      onClick={[Function]}
+      onKeyPress={[MockFunction]}
+      style={
+        Object {
+          "width": "auto",
+        }
+      }
+    >
+      <input
+        className="MuiInputBase-input MuiInput-input"
+        id="autocomplete"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Search..."
+        type="text"
+      />
+    </div>
+  </div>
+</nav>
+`;

@@ -5,7 +5,7 @@ import React from 'react';
 import './Temperature.scss';
 
 // Types
-interface ITemperature {
+export interface ITemperature {
   temp: number | '--';
   description: string;
 }
@@ -22,7 +22,7 @@ const Temperature: React.FC<ITemperature> = ({ temp, description }) => {
         </svg>
         <h2 aria-label='temp'>{temp} °C</h2>
       </div>
-      <h3 aria-label='temp'>{description}</h3>
+      <h3 aria-label='desc'>{description}</h3>
     </div>
   );
 };
