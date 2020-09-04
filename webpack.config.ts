@@ -37,7 +37,7 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { config: { path: 'postcss.config.ts' } },
+            options: { config: { path: 'postcss.config.js' } },
           },
 
           'sass-loader',

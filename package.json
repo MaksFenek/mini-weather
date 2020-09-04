@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "A weather app",
   "main": "index.tsx",
-  "type": "module",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
@@ -64,6 +63,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
+    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
