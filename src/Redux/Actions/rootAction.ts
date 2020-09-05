@@ -15,7 +15,7 @@ export const getForecast = (payload: IForecastData) => ({
 export const GetWeatherThunk = (city: string) => (dispatch: any) => {
   if (city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=74bcb8750f0c21ae8bdb22dc41f21ec1
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_WEATHER_KEY}
       `
     )
       .then((res) => res.json())
@@ -56,7 +56,7 @@ export const GetForecast7daysThunk = () => (
 
   if (city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&units=metric&appid=74bcb8750f0c21ae8bdb22dc41f21ec1
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${coord.lat}&lon=${coord.lon}&units=metric&appid=${process.env.API_WEATHER_KEY}
       `
     )
       .then((res) => res.json())
