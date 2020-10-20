@@ -3,18 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
-const dotenv = require('dotenv');
-module.exports = {};
 
 module.exports = () => {
-  const env = dotenv.config().parsed;
-
-  // reduce it to a nice object, the same as before
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
-
   return {
     entry: ['@babel/polyfill', 'whatwg-fetch', './src/index.tsx'],
     output: {
@@ -88,7 +78,6 @@ module.exports = () => {
       extensions: ['.tsx', '.ts', '.js'],
     },
     plugins: [
-      new webpack.DefinePlugin(envKeys),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
